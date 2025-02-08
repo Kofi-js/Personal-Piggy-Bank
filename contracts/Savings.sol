@@ -27,17 +27,6 @@ contract Savings {
         _;
     }
 
-    // Track ETH sent to the contract directly
-    receive() external payable {
-        require(msg.value > 0, "You can't send nothing");
-
-        // Track the amount sent by the sender
-        AmountSaved[msg.sender] += msg.value;
-        totalSavings += msg.value;
-
-        emit Save(msg.sender, msg.value);
-    }
-
   
     function save() public payable onlyOwner {
         require(msg.value > 0, "You can't save nothing");

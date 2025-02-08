@@ -4,6 +4,19 @@ pragma solidity ^0.8.28;
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
+
+    // Since i'm the only one saving...
+    // // Track ETH sent to the contract directly
+    // receive() external payable {
+    //     require(msg.value > 0, "You can't send nothing");
+
+    //     // Track the amount sent by the sender
+    //     AmountSaved[msg.sender] += msg.value;
+    //     totalSavings += msg.value;
+
+    //     emit Save(msg.sender, msg.value);
+    // }
+
 contract Lock {
     uint public unlockTime;
     address payable public owner;
